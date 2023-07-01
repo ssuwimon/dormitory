@@ -55,10 +55,19 @@ body{
 
 .App{
   display: grid;
-  grid-template-columns: 22vw calc(100vw - 24vw);
+  grid-template-columns: 340px calc(100vw - 20vw);
+  
+  @media screen and (min-width: 1000px) and (max-width: 1800px) {
+    display: grid;
+    grid-template-columns: 330px calc(100vw - 24vw);
+    background-color: aqua;
+ }
+ 
 }
 
 *{
   font-family: 'Prompt', sans-serif;
+  font-size: 16px;
 
 }
+

@@ -34,21 +34,31 @@ const AvartarStyled = styled.div`
 `
 
 const Wrapper = styled.div`
-  height: 14vh;
+@media screen and (min-width: 300px) and (max-width:800px) {
+  display: flex;
+  margin-bottom:24px;
+  .avartar{
+    color: #515151;
+    background-color:red;
+    
+  }
+  .name {
+    display: none;
+  }
 `
 export default function Profile() {
   return (
-    <Wrapper >
-     <AvartarStyled>
+     <Wrapper>
+     <AvartarStyled className='avartar'>
         <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=3" size={70} />
       </AvartarStyled>
-      <ProfileStyle>
+      <ProfileStyle className='name'>
         <div>
           <p className='name'> Suwimon Sithai </p>
           <p> admin </p>
         </div>
       </ProfileStyle>
 
-    </Wrapper>
+     </Wrapper>
   )
 }

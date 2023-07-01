@@ -4,9 +4,9 @@ import styled from "styled-components"
 const WrapperInputModalStyle = styled.div`
     display: flex;
     gap:14px;
-    align-items: center;
     justify-content: center;
     margin-bottom: 10px;
+
 `
 const WrapperInputModal1Style = styled.div`
     display: grid;

@@ -11,7 +11,6 @@ const IconStyled = styled.div`
 `
 
 export default function Icon(props:PropsIcon): React.ReactElement {
-  console.log("🚀 ~ file: icon.tsx:13 ~ Icon ~ props:", props?.icon)
   
   return (
     <IconStyled>

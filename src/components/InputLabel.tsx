@@ -12,7 +12,6 @@ const InputLabelStyle = styled.div`
 
 `
 export default function InputLabel(props:InputLabelProps) {
-    console.log("🚀 ~ file: InputLabel.tsx:15 ~ InputLabel ~ props:", props)
     const {label} = props
   return (
     <InputLabelStyle>

@@ -22,3 +22,8 @@ export const userData: userDataProps[] = [{
     phone: "0624842482"
 }
 ]
+
+export interface ColumnProps {
+    dataIndex: String,
+    title: String
+}

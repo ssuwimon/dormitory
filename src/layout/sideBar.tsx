@@ -6,14 +6,23 @@ import styled from "styled-components";
 
 
 const SidebarContainer = styled.div`
-        width: 20vw;
+        width: 320px;
         background-color: #515151;
         min-height: 100vh;
-        /* padding-top: 50px; */
-        display: grid;
+        // padding-top: 50px;
+        display:flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        @media screen and (min-width: 300px) and (max-width:800px) {
+          width:100px;
+          min-height: 100vh;
+          
+        }
+        .logout{
+
+        }
 `
 
 export default function SideBar() {
@@ -23,8 +32,8 @@ export default function SideBar() {
         <Profile/>
         </div>
         <Menu/>
-        <div >
-        <Logout/>
+        <div className="logout">
+        <Logout />
         </div>
     </SidebarContainer>
   )

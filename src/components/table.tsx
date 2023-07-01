@@ -1,9 +1,9 @@
-import { Space, Table as Grid, Tag } from 'antd';
-import type { ColumnsType } from 'antd/es/table';
+import { Space, Table as Grid, Tag, Button } from "antd";
+import type { ColumnsType } from "antd/es/table";
 // import { roomData } from '../pages/room/roomModel';
-import { userDataProps } from '../pages/room/roomModel';
-import styled from 'styled-components';
-import Action from './action';
+import styled from "styled-components";
+import { MdEdit } from "react-icons/md";
+import { DeleteAction, EditAction, SeeMoreAction } from "./index";
 
 // interface roomDataProps {
 //     id: number,
@@ -13,69 +13,47 @@ import Action from './action';
 //     phone: string
 // }
 const TableWrapper = styled(Grid)`
-    background-color: red;
-`
+  background-color: red;
+`;
 
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+`;
 
+type TableProps<> = {
+  dataSource: object[] | undefined;
+  columns: ColumnsType<object>;
+  onEdit?: Function | boolean;
+  onDelete?: Function | boolean;
+  onSeeMore?: Function | boolean;
+};
+export default function Table(props: TableProps) {
+  const { dataSource, columns, onEdit, onDelete, onSeeMore } = props;
 
-interface tableProps {
-    dataSource: userDataProps[]
-}
-export default function Table(props:tableProps) {
-    const columns: ColumnsType<userDataProps>= [
-        {
-          title: 'Room',
-          dataIndex: 'room',
-          key: 'name',
-          width: 200,
-        //   render: (text) => <a>{text}</a>,
-        },
-        {
-          title: 'ID Card',
-          dataIndex: 'idCard',
-          key: 'idCard',
-        },
-        {
-          title: 'Name',
-          dataIndex: 'name',
-          key: 'name',
-        },
-        {
-          title: 'Phone',
-          key: 'phone',
-          dataIndex: 'phone',
-        //   render: (_, { tags }) => (
-        //     <>
-        //       {tags.map((tag) => {
-        //         let color = tag.length > 5 ? 'geekblue' : 'green';
-        //         if (tag === 'loser') {
-        //           color = 'volcano';
-        //         }
-        //         return (
-        //           <Tag color={color} key={tag}>
-        //             {tag.toUpperCase()}
-        //           </Tag>
-        //         );
-        //       })}
-        //     </>
-        //   ),
-        },
-        {
-          title: 'Action',
-          key: 'action',
-          align: 'center',
-          render: (_, record) => (
-        
-            <Action/>
-         
-          ),
-        },
-      ];
-      
+  const arr = [
+    ...columns,
+    {
+      dataIndex: "name",
+      title: "Action",
+      render: () => {
+        return (
+          <Wrapper>
+            {onSeeMore && <SeeMoreAction />}
+            {onEdit && <EditAction />}
+            {onDelete && <DeleteAction />}
+          </Wrapper>
+        );
+      },
+    },
+  ];
+
+  console.log("🚀 ~ file: table.tsx:46 ~ Table ~ columns:", arr);
+
   return (
     <div>
-        <Grid columns={columns} dataSource={props?.dataSource} />
-      
+      <Grid columns={arr} dataSource={dataSource} />
     </div>
-  )
+  );
 }

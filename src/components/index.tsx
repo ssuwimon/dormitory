@@ -1,4 +1,4 @@
-import Action from "./action";
+import {Action,EditAction,DeleteAction,SeeMoreAction} from "./action";
 import Button from "./button";
 import Container from "./container";
 import FilterBar from "./filterBar";
@@ -22,4 +22,8 @@ export  {Action,
     Table,
     WrapperInputModal,
     WrapperInputModal1,
-    Select}
+    Select,
+    EditAction,
+    DeleteAction,
+    SeeMoreAction
+}

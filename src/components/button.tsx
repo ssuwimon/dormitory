@@ -108,7 +108,6 @@ interface ButtonProps {
 
 function Button(props: ButtonProps) {
     const { type, value, disabled, onClick, title } = props
-    console.log("🚀 ~ file: button.tsx:96 ~ Button ~ title:", title)
     const iconBtn = () => {
         if (type === 'create') {
             return <HiOutlinePlusSm />

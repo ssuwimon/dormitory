@@ -15,7 +15,6 @@ const Wrapper = styled.div`
 `
 
 export default function TitleBar(props: TitleBarProps):JSX.Element {
-  console.log("🚀 ~ file: titileBar.tsx:7 ~ TitleBar ~ props:", props)
 
   return (
     <Wrapper>

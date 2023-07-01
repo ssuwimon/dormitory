@@ -123,3 +123,10 @@ button:focus-visible {
 .ant-select-arrow > span > svg{
   font-size: 14px;
 }
+@media screen and (max-width: 500px) {
+  .ant-table-wrapper{
+    padding: 10px;
+    font-weight: 400;
+    background-color: red;
+   }
+}
